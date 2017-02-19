@@ -30,7 +30,7 @@ var articles={
         date:"21 Feb 2017",
         content:` <p>This is content of my third article.Yes!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     </p>`
-    },
+    }
 };
 function createTemplate (data){
     var title=data.title;
@@ -61,6 +61,7 @@ function createTemplate (data){
     `;
     return htmlTemplate;
 }
+
 app.get('/', function (req, res) {
   res.send(path.join(__dirname, 'ui', 'index.html'));
 });
