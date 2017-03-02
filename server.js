@@ -15,33 +15,6 @@ var config={
 };
 app.use(morgan('combined'));
 
-var articles={
-        'article-one':{
-        title:"Article one|Roshan Patil",
-        heading:"Article one",
-        date:"19 Feb 2017",
-        content:` <p>This is content of my first article.Yes!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    </p>
-                    <p>This is content of my first article.Yes!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    </p>
-                    <p>This is content of my first article.Yes!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    </p>`
-    },
-    'article-two':{
-            title:"Article two|Roshan Patil",
-        heading:"Article two",
-        date:"20 Feb 2017",
-        content:` <p>This is content of my second article.Yes!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    </p>`
-    },
-     'article-three':{
-            title:"Article three|Roshan Patil",
-        heading:"Article three",
-        date:"21 Feb 2017",
-        content:` <p>This is content of my third article.Yes!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    </p>`
-    }
-};
 function createTemplate (data){
     var title=data.title;
     var date=data.date;
