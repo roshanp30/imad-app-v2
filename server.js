@@ -72,11 +72,7 @@ function createTemplate (data){
     return htmlTemplate;
 }
 
-//app.get('/:articleName',function(req,res)
-//{
- //var articleName = req.params.articleName;
- //res.send(createTemplate(articles[articleName]));
-//});
+
 
 
 var pool = new Pool(config);
@@ -96,6 +92,27 @@ app.get('/test-db',function (req,res){
     });
     
 });
+app.get('/:articleName',function(req,res)
+{
+ var articleName = req.params.articleName;
+ pool.query("SELECT * FROM artice where title="+req.params.articeName,function(err,result){
+     if(err){
+            res.status(500).send(err,toString());
+        }
+        else{
+            if(result.row.length===0)
+                res.status(404).send('Article not found');
+                else
+                {
+                    var articleData=result.row[0];
+                    res.send(createTemplate(articleData));
+                }
+        }
+ });
+ //res.send(createTemplate(articleData));
+});
+
+
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
